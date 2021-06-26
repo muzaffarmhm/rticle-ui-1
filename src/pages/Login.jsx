@@ -1,6 +1,9 @@
 import React from "react";
-import logo from '../images/asvg.svg'
+import logo from "../images/asvg.svg";
 import { Link } from "react-router-dom";
+import InputTemplate from "../components/InputTemplate";
+import FormButton from "../components/FormButton";
+import FormTop from "../components/FormTop";
 
 export default function Login() {
   return (
@@ -17,48 +20,22 @@ export default function Login() {
             }}
           />
           <div className="bg-no-repeat bg-right bg-cover max-w-max max-h-8 h-12 p-4">
-              <Link to = "/">
-            <img 
-              src={logo}
-              alt="logo"
-                /> 
-                </Link>
-            
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </div>
           <div className="md:w-1/2 max-w-lg mx-auto my-24 px-4 py-5 shadow-none">
-            <div className="text-left p-0 font-sans">
-              <h1 className=" text-gray-800 text-3xl font-medium">
-                Log In
-              </h1>
-              <h3 className="p-1 text-gray-700">
-                Welcome Back! Hope you are with great content :)
-              </h3>
-            </div>
+            <FormTop
+              heading="Log in to your account"
+              desc="Welcome Back! Hope you are with great content 😉"
+            />
+
             <form action="#" className="p-0">
-              <div className="mt-5">
-                <input
-                  type="text"
-                  className="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent "
-                  placeholder="Email"
-                />
-              </div>
-        
-              <div className="mt-5">
-                <input
-                  type="password"
-                  className="block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent  "
-                  placeholder="Password"
-                />
-              </div>
-              
-              <div className="mt-10">
-                <input
-                  type="submit"
-                  defaultValue="Log in with email"
-                  className="py-3 bg-green-500 text-white w-full rounded hover:bg-green-600"
-                />
-              </div>
+              <InputTemplate type="text" placeholder="Email" required />
+              <InputTemplate type="password" placeholder="Password" required />
+              <FormButton />
             </form>
+
             <Link to="/signup">
               <span className="block  p-5 text-center text-gray-800  text-xs ">
                 Don't have an account? Sign up here!
