@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../images/asvg.svg";
 import { Link } from "react-router-dom";
 import InputTemplate from "../components/InputTemplate";
 import FormButton from "../components/FormButton";
 import FormTop from "../components/FormTop";
+import { withRouter } from "react-router-dom";
+import { attemptLogin } from "../services/attemptLogin.service";
 
 export default function Login() {
+  const loginUser = async (event) => {
+    event.preventDefault();
+    attemptLogin({ email: email, password: password });
+  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div>
       <div>
@@ -30,9 +38,31 @@ export default function Login() {
               desc="Welcome Back! Hope you are with great content 😉"
             />
 
-            <form action="#" className="p-0">
-              <InputTemplate type="text" placeholder="Email" required />
-              <InputTemplate type="password" placeholder="Password" required />
+            <form
+              action="#"
+              className="p-0"
+              onSubmit={(event) => {
+                loginUser(event);
+              }}
+            >
+              <InputTemplate
+                type="text"
+                placeholder="Email"
+                value={email}
+                required
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+              />
+              <InputTemplate
+                type="password"
+                value={password}
+                placeholder="Password"
+                required
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+              />
               <FormButton />
             </form>
 

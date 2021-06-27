@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../images/asvg.svg";
 import { Link } from "react-router-dom";
 import InputTemplate from "../components/InputTemplate";
 import FormButton from "../components/FormButton";
 import FormTop from "../components/FormTop";
+import { attemptSignUp } from "../services/attemptSignUp.service";
 
 export default function Signup() {
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
+  const [description, setDescription] = useState();
+
+  const signUp = (event) => {
+    event.preventDefault();
+
+    attemptSignUp({
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+      description: description,
+    });
+  };
   return (
     <div>
       <div>
@@ -30,15 +49,52 @@ export default function Signup() {
               desc="Explore rticle! Make articles! Become Popular!"
             />
 
-            <form action="#" className="p-0">
-              <InputTemplate type="text" placeholder="First Name" required />
-              <InputTemplate type="text" placeholder="Last Name" required />
-              <InputTemplate type="text" placeholder="Email" required />
-              <InputTemplate type="password" placeholder="Password" required />
+            <form
+              action="#"
+              className="p-0"
+              onSubmit={(event) => {
+                signUp(event);
+              }}
+            >
+              <InputTemplate
+                type="text"
+                placeholder="First Name"
+                required
+                onChange={(event) => {
+                  setFirstName(event.target.value);
+                }}
+              />
+              <InputTemplate
+                type="text"
+                placeholder="Last Name"
+                required
+                onChange={(event) => {
+                  setLastName(event.target.value);
+                }}
+              />
+              <InputTemplate
+                type="text"
+                placeholder="Email"
+                required
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+              />
+              <InputTemplate
+                type="password"
+                placeholder="Password"
+                required
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+              />
               <InputTemplate
                 type="password"
                 placeholder="Confirm Password"
                 required
+                onChange={(event) => {
+                  setConfirmPassword(event.target.value);
+                }}
               />
 
               <div className="mt-5">
@@ -49,6 +105,9 @@ export default function Signup() {
                   cols={50}
                   placeholder="Let people know about you! Introduce yourself"
                   style={{ resize: "none" }}
+                  onChange={(event) => {
+                    setDescription(event.target.value);
+                  }}
                 />
               </div>
 
