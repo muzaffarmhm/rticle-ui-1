@@ -13,7 +13,7 @@ export default function Navbar() {
               <Link to="/latest" className="mr-5 hover:bg-green-300 p-2 rounded-3xl ">Latest</Link>
               <Link to="/trending" className="mr-5 hover:bg-green-300 p-2 rounded-3xl">Trending</Link>
               <Link to="/about" className="mr-5 hover:bg-green-300 p-2 rounded-3xl">Our Story</Link>
-              <Link to="/new" className="hover:bg-green-300 p-2 rounded-3xl">Write for Us</Link>
+              <Link to="/write" className="hover:bg-green-300 p-2 rounded-3xl">Write for Us</Link>
             </nav>
             <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
               <span className="ml-3 text-xl">rticle</span>
