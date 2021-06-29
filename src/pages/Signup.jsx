@@ -13,17 +13,19 @@ export default function Signup() {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
   const [description, setDescription] = useState();
+  const [profileImage, setProfileImage] = useState();
 
   const signUp = (event) => {
     event.preventDefault();
-
-    attemptSignUp({
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-      description: description,
-    });
+    const formData = new FormData();
+    formData.append("profileImage", profileImage);
+    formData.append("firstName", firstName);
+    formData.append("lastName", lastName);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("description", description);
+    formData.append("role", "blogger");
+    attemptSignUp(formData);
   };
   return (
     <div>
@@ -116,6 +118,9 @@ export default function Signup() {
                 type="file"
                 placeholder="Confirm Password"
                 accept="image/*"
+                onChange={(event) => {
+                  setProfileImage(event.target.files[0]);
+                }}
               >
                 {" "}
               </InputTemplate>

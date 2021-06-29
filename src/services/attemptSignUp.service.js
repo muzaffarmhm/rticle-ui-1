@@ -1,11 +1,12 @@
 export const attemptSignUp = async (body) => {
+  // console.log("BODY", body);
   var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+  // myHeaders.append("Content-Type", "multipart/form-data");
 
   var requestOptions = {
     method: "POST",
     headers: myHeaders,
-    body: JSON.stringify(body),
+    body: body,
   };
 
   const response = await fetch("user/register", requestOptions);
