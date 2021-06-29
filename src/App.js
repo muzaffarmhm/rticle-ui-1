@@ -3,6 +3,9 @@ import Home from './pages/Home'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Write from './pages/write/Write';
+import About from './pages/About';
+import Latest from './pages/Latest';
+import Trending from './pages/Trending';
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
       <Route path="/signup" component ={Signup} />
       <Route path="/login" component ={Login} />
       <Route path="/write" component ={Write} />
+      <Route path="/about" component ={About} />
+      <Route path="/latest" component ={Latest} />
+      <Route path="/trending" component ={Trending} />
    
     </div>
     </Router>
