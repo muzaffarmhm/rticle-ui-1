@@ -8,11 +8,5 @@ export const attemptLogin = async (body) => {
     body: JSON.stringify(body),
   };
 
-  const response = await fetch("user/login", requestOptions);
-
-  if (response.status === 200) {
-    console.log(response);
-  } else {
-    alert("Invalid Email or Password");
-  }
+  return await fetch("user/login", requestOptions);
 };

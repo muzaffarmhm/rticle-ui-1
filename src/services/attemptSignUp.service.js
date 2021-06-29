@@ -9,11 +9,5 @@ export const attemptSignUp = async (body) => {
     body: body,
   };
 
-  const response = await fetch("user/register", requestOptions);
-
-  if (response.status === 201) {
-    alert("user created successfully");
-  } else {
-    alert("Invalid Email or Password");
-  }
+  return await fetch("user/register", requestOptions);
 };

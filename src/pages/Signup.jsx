@@ -5,6 +5,8 @@ import InputTemplate from "../components/InputTemplate";
 import FormButton from "../components/FormButton";
 import FormTop from "../components/FormTop";
 import { attemptSignUp } from "../services/attemptSignUp.service";
+import { useHistory } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Signup() {
   const [firstName, setFirstName] = useState();
@@ -14,8 +16,9 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState();
   const [description, setDescription] = useState();
   const [profileImage, setProfileImage] = useState();
+  let history = useHistory();
 
-  const signUp = (event) => {
+  const signUp = async (event) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("profileImage", profileImage);
@@ -25,7 +28,15 @@ export default function Signup() {
     formData.append("password", password);
     formData.append("description", description);
     formData.append("role", "blogger");
-    attemptSignUp(formData);
+    const response = await attemptSignUp(formData);
+    const responseJson = await response.json();
+
+    if (response.status === 201) {
+      toast.success(responseJson.msg, { duration: 1000 });
+      history.push("/login");
+    } else {
+      toast.error(responseJson.msg, { duration: 1000 });
+    }
   };
   return (
     <div>

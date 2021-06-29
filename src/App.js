@@ -1,4 +1,5 @@
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast';
 import Home from './pages/Home'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -18,7 +19,7 @@ function App() {
       <Route path="/about" component ={About} />
       <Route path="/latest" component ={Latest} />
       <Route path="/trending" component ={Trending} />
-   
+      <Toaster />
     </div>
     </Router>
   );

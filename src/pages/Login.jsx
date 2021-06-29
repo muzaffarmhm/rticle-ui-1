@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Cookies from "js-cookie";
 import logo from "../images/asvg.svg";
 import { Link } from "react-router-dom";
 import InputTemplate from "../components/InputTemplate";
@@ -6,11 +7,22 @@ import FormButton from "../components/FormButton";
 import FormTop from "../components/FormTop";
 import { withRouter } from "react-router-dom";
 import { attemptLogin } from "../services/attemptLogin.service";
+import { useHistory } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Login() {
+  let history = useHistory();
   const loginUser = async (event) => {
     event.preventDefault();
-    attemptLogin({ email: email, password: password });
+    const response = await attemptLogin({ email: email, password: password });
+    const responseJson = await response.json();
+    if (response.status === 200) {
+      toast.success("Login Successful", { duration: 1000 });
+      Cookies.set("token", responseJson.jwt_token);
+      history.push("/write");
+    } else {
+      toast.error(responseJson.msg, { duration: 1000 });
+    }
   };
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -1,14 +1,27 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import "./write.css";
 import axios from "axios";
 import { Context } from "../../context/Context";
 import Navbar from "../../components/Navbar";
+import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom";
+import _ from "lodash";
 
 export default function Write() {
+  let history = useHistory();
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
   const { user } = useContext(Context);
+  const [token, setToken] = useState();
+
+  useEffect(() => {
+    if (_.isEmpty(Cookies.get("token"))) {
+      history.push("/login");
+    } else {
+      setToken(Cookies.get("token"));
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +31,7 @@ export default function Write() {
       desc,
     };
     if (file) {
-      const data =new FormData();
+      const data = new FormData();
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
@@ -33,13 +46,12 @@ export default function Write() {
     } catch (err) {}
   };
   return (
-      
     <div className="write">
-       <Navbar/> 
+      <Navbar />
       {file && (
         <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
       )}
-      
+
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
@@ -56,7 +68,7 @@ export default function Write() {
             placeholder="Title"
             className="writeInput"
             autoFocus={true}
-            onChange={e=>setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className="writeFormGroup">
@@ -64,7 +76,7 @@ export default function Write() {
             placeholder="Tell your story..."
             type="text"
             className="writeInput writeText"
-            onChange={e=>setDesc(e.target.value)}
+            onChange={(e) => setDesc(e.target.value)}
           ></textarea>
         </div>
         <button className="writeSubmit" type="submit">
