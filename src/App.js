@@ -7,6 +7,7 @@ import Write from './pages/write/Write';
 import About from './pages/About';
 import Latest from './pages/Latest';
 import Trending from './pages/Trending';
+import Single from './pages/Single'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/about" component ={About} />
       <Route path="/latest" component ={Latest} />
       <Route path="/trending" component ={Trending} />
+      <Route path="/single" component ={Single} />
       <Toaster />
     </div>
     </Router>
