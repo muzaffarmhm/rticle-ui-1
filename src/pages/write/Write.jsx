@@ -1,88 +1,30 @@
-import { useContext, useState, useEffect } from "react";
-import "./write.css";
-import axios from "axios";
-import { Context } from "../../context/Context";
-import Navbar from "../../components/Navbar";
-import Cookies from "js-cookie";
-import { useHistory } from "react-router-dom";
-import _ from "lodash";
+import React from "react";
+import ReactDOM from "react-dom";
+import { MegadraftEditor, editorStateFromRaw } from "megadraft";
 
-export default function Write() {
-  let history = useHistory();
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-  const [file, setFile] = useState(null);
-  const { user } = useContext(Context);
-  const [token, setToken] = useState();
+//Import megadraft.css
+import "megadraft/dist/css/megadraft.css";
 
-  useEffect(() => {
-    if (_.isEmpty(Cookies.get("token"))) {
-      history.push("/login");
-    } else {
-      setToken(Cookies.get("token"));
-    }
-  }, []);
+export default class Write extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { editorState: editorStateFromRaw(null) };
+  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const newPost = {
-      username: user.username,
-      title,
-      desc,
-    };
-    if (file) {
-      const data = new FormData();
-      const filename = Date.now() + file.name;
-      data.append("name", filename);
-      data.append("file", file);
-      newPost.photo = filename;
-      try {
-        await axios.post("/upload", data);
-      } catch (err) {}
-    }
-    try {
-      const res = await axios.post("/posts", newPost);
-      window.location.replace("/post/" + res.data._id);
-    } catch (err) {}
+  onChange = (editorState) => {
+    this.setState({ editorState });
   };
-  return (
-    <div className="write">
-      <Navbar />
-      {file && (
-        <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
-      )}
 
-      <form className="writeForm" onSubmit={handleSubmit}>
-        <div className="writeFormGroup">
-          <label htmlFor="fileInput">
-            <i className="writeIcon fas fa-plus"></i>
-          </label>
-          <input
-            type="file"
-            id="fileInput"
-            style={{ display: "none" }}
-            onChange={(e) => setFile(e.target.files[0])}
-          />
-          <input
-            type="text"
-            placeholder="Title"
-            className="writeInput"
-            autoFocus={true}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </div>
-        <div className="writeFormGroup">
-          <textarea
-            placeholder="Tell your story..."
-            type="text"
-            className="writeInput writeText"
-            onChange={(e) => setDesc(e.target.value)}
-          ></textarea>
-        </div>
-        <button className="writeSubmit" type="submit">
-          Publish
-        </button>
-      </form>
-    </div>
-  );
+  render() {
+    return (
+      //Add some margin left to show plugins sidebar
+      <div style={{ marginLeft: 80 }}>
+        <MegadraftEditor
+          editorState={this.state.editorState}
+          onChange={this.onChange}
+          placeholder="Add some text"
+        />
+      </div>
+    );
+  }
 }
