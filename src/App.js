@@ -8,6 +8,7 @@ import About from './pages/About';
 import Latest from './pages/Latest';
 import Trending from './pages/Trending';
 import Single from './pages/Single'
+import PublicUser from './pages/PublicUser'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/latest" component ={Latest} />
       <Route path="/trending" component ={Trending} />
       <Route path="/single" component ={Single} />
+      <Route path="/publicprofile" component ={PublicUser} />
       <Toaster />
     </div>
     </Router>

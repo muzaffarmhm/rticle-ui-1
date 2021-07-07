@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
 
 export default function BlogTemplate(props) {
     return (
@@ -25,9 +27,9 @@ export default function BlogTemplate(props) {
                   </div>
               <p href="#" className="text-sm py-3">
                 By{" "}
-                <a href="#" className="font-semibold hover:text-blue-800">
+                <Link to="/publicprofile" className="font-semibold hover:text-blue-800">
                   {props.author}
-                </a>
+                </Link>
                 , Published on {props.date}
               </p>
               <a href="#" className="pb-6">
