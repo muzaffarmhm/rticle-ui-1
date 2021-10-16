@@ -18,7 +18,7 @@ export default function Login() {
     const responseJson = await response.json();
     if (response.status === 200) {
       toast.success("Login Successful", { duration: 1000 });
-      Cookies.set("token", responseJson.jwt_token);
+      Cookies.set("token", responseJson.accessToken);
       history.push("/write");
     } else {
       toast.error(responseJson.msg, { duration: 1000 });

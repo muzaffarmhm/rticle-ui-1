@@ -6,7 +6,7 @@ import FormButton from "../components/FormButton";
 import FormTop from "../components/FormTop";
 import { attemptSignUp } from "../services/attemptSignUp.service";
 import { useHistory } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 export default function Signup() {
   const [firstName, setFirstName] = useState();
