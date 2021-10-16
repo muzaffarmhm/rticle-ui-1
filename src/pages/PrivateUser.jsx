@@ -51,7 +51,6 @@ function changeDetails(){
                 </span>
               </h1>
               <h1 className="text-gray-500 text-sm leading-8 mt-5">
-                Place of them{" "}
                 <span className="ml-5">
                 <button onclick={changeDetails} className="mr-5 font-semibold bg-green-300 text-gray-500 text-sm px-5 rounded-3xl hover:bg-green-300 rounded-3xl">
                     Edit
