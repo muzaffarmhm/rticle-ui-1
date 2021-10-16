@@ -1,5 +1,5 @@
+
 import React from "react";
-import ReactDOM from "react-dom";
 import { MegadraftEditor, editorStateFromRaw } from "megadraft";
 import Navbar from "../../components/Navbar";
 import WriteDetails from "../../components/ArticleWrite/WriteDetails";
