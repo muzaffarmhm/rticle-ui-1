@@ -18,7 +18,7 @@ A blog website where users can publish their articles and content to the web.
 ## 👨🏿‍🤝‍👨🏿Authors
 
 - [Muzaffar Pasha](https://www.github.com/muzaffarmhm)
-- [Hariharan](https://www.github.com/octokatherine)
+- [Hariharan](https://github.com/haridebl3)
 
 
   
