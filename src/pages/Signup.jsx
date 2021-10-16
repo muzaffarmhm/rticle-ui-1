@@ -38,6 +38,22 @@ export default function Signup() {
       toast.error(responseJson.msg, { duration: 1000 });
     }
   };
+
+  function matchPassword() {  
+    var pw1 = document.getElementById("pswd1").value;  
+    var pw2 = document.getElementById("pswd2").value;  
+
+    console.log(pw1);
+    console.log(pw2);
+    if(pw1 != pw2)  
+    {   
+      alert("Passwords did not match");  
+    } else {  
+      alert("Password created successfully");  
+    }  
+  }  
+
+
   return (
     <div>
       <div>
@@ -86,7 +102,7 @@ export default function Signup() {
                 }}
               />
               <InputTemplate
-                type="text"
+                type="email"
                 placeholder="Email"
                 required
                 onChange={(event) => {
@@ -94,6 +110,7 @@ export default function Signup() {
                 }}
               />
               <InputTemplate
+                id="pswd1"
                 type="password"
                 placeholder="Password"
                 required
@@ -102,6 +119,7 @@ export default function Signup() {
                 }}
               />
               <InputTemplate
+                id="pswd2"
                 type="password"
                 placeholder="Confirm Password"
                 required
@@ -136,7 +154,7 @@ export default function Signup() {
                 {" "}
               </InputTemplate>
 
-              <FormButton />
+              <FormButton onClick={matchPassword}/>
             </form>
             <Link to="/login">
               <span className="block  p-5 text-center text-gray-800  text-xs ">

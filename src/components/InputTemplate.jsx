@@ -9,6 +9,8 @@ export default function InputTemplate(props) {
         placeholder={props.placeholder}
         value={props.value}
         onChange={props.onChange}
+        id={props.id}
+        required
       />
       {props.children}
     </div>
