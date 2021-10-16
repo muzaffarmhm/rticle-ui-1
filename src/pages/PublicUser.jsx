@@ -17,7 +17,6 @@ export default function User(props) {
             <h1 className="text-gray-800 font-semibold text-xl mt-5">
               Bae Suzy
             </h1>
-            <h1 className="text-gray-500 text-sm leading-8">ABC University,</h1>
             <h1 className="text-gray-500 text-sm p-6 text-center leading-8 tracking-wider">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem

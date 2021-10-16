@@ -42,21 +42,7 @@ function changeDetails(){
                 </span>
               </h1>
 
-              <h1 className="text-gray-500 text-sm leading-8 mt-5">
-                Name of the University/Employment,
-                <span className="ml-5">
-                <button onclick={changeDetails} className="mr-5 font-semibold bg-green-300 text-gray-500 text-sm px-5 rounded-3xl hover:bg-green-300 rounded-3xl">
-                    Edit
-                  </button>
-                </span>
-              </h1>
-              <h1 className="text-gray-500 text-sm leading-8 mt-5">
-                <span className="ml-5">
-                <button onclick={changeDetails} className="mr-5 font-semibold bg-green-300 text-gray-500 text-sm px-5 rounded-3xl hover:bg-green-300 rounded-3xl">
-                    Edit
-                  </button>
-                </span>
-              </h1>
+              
               <h1 className="text-gray-500 text-sm p-6 text-center leading-8 tracking-wider">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -64,11 +50,11 @@ function changeDetails(){
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore.{" "}
-                <span className="ml-5">
+                
                 <button onclick={changeDetails} className="mr-5 font-semibold bg-green-300 text-gray-500 text-sm px-5 rounded-3xl hover:bg-green-300 rounded-3xl">
                     Edit
                   </button>
-                </span>
+                
               </h1>
             </div>
           </div>
