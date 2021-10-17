@@ -13,9 +13,8 @@ export default function Hero() {
             </h1>
             <p class="mb-8 text-base leading-relaxed text-left text-blueGray-600 ">
               {" "}
-              Deploy your mvp in minutes, not days. WT offers you a a wide
-              selection swapable sections for your landing page.You are going to
-              have fun building it, I did.{" "}
+              Deploy your content to the internet in minutes. rticle offers you wide range of content.
+              .{" "}
             </p>
             <p class="flex items-center mb-2 text-blueGray-600 ">
               <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
@@ -30,7 +29,7 @@ export default function Hero() {
                   <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                 </svg>
               </span>{" "}
-              Ain't no sunshine when she's gone.{" "}
+              Easy Editor Page{" "}
             </p>
             <p class="flex items-center mb-2 text-blueGray-600 ">
               <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
@@ -45,7 +44,7 @@ export default function Hero() {
                   <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                 </svg>
               </span>{" "}
-              Expensive feature.
+              Fast feature
             </p>
             <p class="flex items-center mb-6 text-blueGray-600">
               <span class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 rounded-full">
@@ -60,7 +59,7 @@ export default function Hero() {
                   <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                 </svg>
               </span>{" "}
-              Really good feauture.
+              Simple Design
             </p>
           </div>
           <div className="w-full lg:w-5/6 lg:max-w-lg md:w-1/2">
