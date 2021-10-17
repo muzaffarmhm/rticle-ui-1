@@ -10,6 +10,7 @@ import Trending from './pages/Trending';
 import Single from './pages/Single'
 import PublicUser from './pages/PublicUser'
 import PrivateUser from './pages/PrivateUser';
+import Admin from './pages/Admin/Admin';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/single" component ={Single} />
       <Route path="/publicprofile" component ={PublicUser} />
       <Route path="/privateprofile" component ={PrivateUser} />
+      <Route path="/admin" component ={Admin} />
       <Toaster />
     </div>
     </Router>
