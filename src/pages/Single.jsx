@@ -41,7 +41,7 @@ export default function single({
                 </a>
                 , Published on April 25th, 2020
               </p>
-              <Interweave content={content} />;
+              <Interweave content={content} />
             </div>
           </article>
         </section>

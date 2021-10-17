@@ -27,7 +27,7 @@ export default function Signup() {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("description", description);
-    formData.append("role", "blogger");
+    formData.append("role", "admin");
     const response = await attemptSignUp(formData);
     const responseJson = await response.json();
 
@@ -39,20 +39,11 @@ export default function Signup() {
     }
   };
 
-  function matchPassword() {  
-    var pw1 = document.getElementById("pswd1").value;  
-    var pw2 = document.getElementById("pswd2").value;  
-
-    console.log(pw1);
-    console.log(pw2);
-    if(pw1 != pw2)  
-    {   
-      alert("Passwords did not match");  
-    } else {  
-      alert("Password created successfully");  
-    }  
-  }  
-
+  function matchPassword() {
+    if (password != confirmPassword) {
+      alert("Passwords did not match");
+    }
+  }
 
   return (
     <div>
@@ -153,7 +144,7 @@ export default function Signup() {
                 {" "}
               </InputTemplate>
 
-              <FormButton onClick={matchPassword}/>
+              <FormButton onClick={matchPassword} />
             </form>
             <Link to="/login">
               <span className="block  p-5 text-center text-gray-800  text-xs ">
