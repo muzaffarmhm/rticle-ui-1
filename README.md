@@ -12,7 +12,7 @@ A blog website where users can publish their articles and content to the web.
 
 **Server:** Node, Express
 
-**Database:** MySQL
+**Database:** Mangodb
 
   
 ## 👨🏿‍🤝‍👨🏿Authors
@@ -51,7 +51,7 @@ A blog website where users can publish their articles and content to the web.
   
 ## Acknowledgements
 
- - [Megadraft](https://github.com/globocom/megadraft)
+ - [MUI RTE](https://www.npmjs.com/package/mui-rte)
  
 
   
