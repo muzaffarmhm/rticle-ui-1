@@ -80,14 +80,9 @@ export default function Write() {
         setCategory={setCategory}
         setCoverPicUrl={setCoverPicUrl}
       />
-      <div
-        style={{
-          marginLeft: 50,
-          border: "1px solid grey",
-          width: "1200px",
-          minHeight: 300,
-        }}
-      >
+
+      <div className="w-full max-w-screen-xl max-w-screen-lg max-w-screen-sm h-screen border-2"
+          >
         <ThemeProvider theme={myTheme}>
           <MUIRichTextEditor
             label="Type something here..."
