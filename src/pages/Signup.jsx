@@ -145,7 +145,6 @@ export default function Signup() {
               <label>Your Selfie over here 😁</label>
               <InputTemplate
                 type="file"
-                placeholder="Confirm Password"
                 accept="image/*"
                 onChange={(event) => {
                   setProfileImage(event.target.files[0]);

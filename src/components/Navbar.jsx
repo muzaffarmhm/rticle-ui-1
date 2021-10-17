@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import _ from "lodash";
 import Cookies from "js-cookie";
-import { getUserInfo } from "../services/userInfo.service";
-import { getProfileImg } from "../services/profileImage.service";
+import { useJwt } from "react-jwt";
 
 export default function Navbar() {
   const [authToken, setAuthToken] = useState();
-  const [firstName, setFirstName] = useState();
-  const [lastName, setLastName] = useState();
+  const [name, setName] = useState();
+  const { decodedToken, isExpired } = useJwt(authToken);
   useEffect(() => {
     if (!_.isEmpty(Cookies.get("token"))) {
       setAuthToken(Cookies.get("token"));
@@ -16,18 +15,11 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    async function getUser() {
-      if (!_.isEmpty(authToken)) {
-        const userInfo = await getUserInfo(authToken);
-        const profileImage = await getProfileImg(authToken);
-        setFirstName(userInfo.firstName);
-        setLastName(userInfo.lastName);
-        document.getElementById("profileImg").src = profileImage;
-      }
+    if (!_.isEmpty(decodedToken)) {
+      setName(decodedToken.name);
+      document.getElementById("profileImg").src = decodedToken.imageUrl;
     }
-
-    getUser();
-  }, authToken);
+  }, [decodedToken]);
   return (
     <nav className="bg-gray-50">
       <Link to="/">
@@ -87,9 +79,7 @@ export default function Navbar() {
             )}
             {authToken && (
               <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-                <label>
-                  {firstName} {lastName}
-                </label>
+                <label>{name}</label>
                 <img
                   id="profileImg"
                   style={{
