@@ -34,12 +34,7 @@ export default function Latest() {
           Our Latest Blogs
         </h1>
         <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo debitis
-          molestias ipsa quis, omnis porro adipisci libero a in! Impedit vel
-          odio suscipit debitis. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Alias cumque aliquam repudiandae, laborum molestiae
-          et ipsa provident placeat nulla quisquam tempore, id, porro
-          architecto!
+          On this page, you can find the latest blogs which have been posted and verified.
         </p>
       </div>
       <div className="container mx-auto flex flex-wrap py-6 ">

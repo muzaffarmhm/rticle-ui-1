@@ -12,12 +12,8 @@ export default function About() {
             Our Team
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-            debitis molestias ipsa quis, omnis porro adipisci libero a in!
-            Impedit vel odio suscipit debitis. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Alias cumque aliquam repudiandae,
-            laborum molestiae et ipsa provident placeat nulla quisquam tempore,
-            id, porro architecto!
+            rticle is a ambitious blog website that was launched in 2021 by two friends with the goal of examining how blogs will impact living in the future for a broad audience.
+            We believe that we now live in a brilliant world of devices, which has ushered in digital revolutions.
           </p>
         </div>
 
