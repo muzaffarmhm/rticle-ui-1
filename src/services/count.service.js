@@ -7,10 +7,7 @@ export const getUserCount = async () => {
     headers: myHeaders,
   };
 
-  const response = await fetch(
-    "https://rticle-api.herokuapp.com/user/getCount",
-    requestOptions
-  );
+  const response = await fetch("user/getCount", requestOptions);
   const responseJson = await response.json();
   return responseJson.count;
 };
