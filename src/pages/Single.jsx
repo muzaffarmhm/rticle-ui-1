@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PostTemplateSkin from "../components/PostTemplateSkin";
-import Interweave from "interweave";
-
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import MUIRichTextEditor from "mui-rte";
 export default function single({
   title,
   coverPic,
@@ -13,6 +13,9 @@ export default function single({
   category,
   author,
 }) {
+  const myTheme = createTheme({
+    // Set up your custom MUI theme here
+  });
   return (
     <div>
       <Navbar />
@@ -41,7 +44,15 @@ export default function single({
                 </a>
                 , Published on April 25th, 2020
               </p>
-              <Interweave content={content} />
+              <ThemeProvider theme={myTheme}>
+                <MUIRichTextEditor
+                  label="Type something here..."
+                  defaultValue={content}
+                  readOnly={true}
+                  toolBar={false}
+                  inlineToolbar={true}
+                />
+              </ThemeProvider>
             </div>
           </article>
         </section>

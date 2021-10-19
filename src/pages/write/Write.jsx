@@ -7,7 +7,6 @@ import WriteDetails from "../../components/ArticleWrite/WriteDetails";
 import FormButton from "../../components/FormButton";
 import MUIRichTextEditor from "mui-rte";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { convertToHTML } from "draft-convert";
 import Single from "../Single";
 import { saveArticleToBuffer } from "../../services/saveBuffer.service";
 import { useHistory } from "react-router-dom";
@@ -25,7 +24,6 @@ export default function Write() {
   const [coverPicUrl, setCoverPicUrl] = useState();
   const [showPreview, setShowPreview] = useState(false);
   const [content, setContent] = useState();
-  const [html, setHtml] = useState();
   const author = decodedToken?.name;
   const myTheme = createTheme({
     // Set up your custom MUI theme here
@@ -37,7 +35,7 @@ export default function Write() {
     formData.append("tags", tags);
     formData.append("category", category);
     formData.append("coverPicUrl", coverPicUrl);
-    formData.append("content", html);
+    formData.append("content", content);
     formData.append("author", author);
     const response = await saveArticleToBuffer(formData);
     const responseJson = await response.json();
@@ -62,7 +60,7 @@ export default function Write() {
         description={description}
         category={category}
         coverPic={coverPicUrl}
-        content={html}
+        content={content}
         author={author}
       />
     </div>
@@ -81,17 +79,13 @@ export default function Write() {
         setCoverPicUrl={setCoverPicUrl}
       />
 
-      <div className="w-full max-w-screen-xl max-w-screen-lg max-w-screen-sm h-screen border-2"
-          >
+      <div className="w-full max-w-screen-xl max-w-screen-lg max-w-screen-sm h-screen border-2">
         <ThemeProvider theme={myTheme}>
           <MUIRichTextEditor
             label="Type something here..."
             defaultValue={content}
             onSave={(content) => {
               setContent(content);
-            }}
-            onChange={(editorState) => {
-              setHtml(convertToHTML(editorState.getCurrentContent()));
             }}
             inlineToolbar={true}
           />
