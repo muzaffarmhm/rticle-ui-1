@@ -1,3 +1,4 @@
+const serverUrl = "https://rticle-api.herokuapp.com";
 export const getAllBuffers = async (bearerToken) => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -8,5 +9,5 @@ export const getAllBuffers = async (bearerToken) => {
     headers: myHeaders,
   };
 
-  return await fetch("buffer", requestOptions);
+  return await fetch(`${serverUrl}/buffer`, requestOptions);
 };

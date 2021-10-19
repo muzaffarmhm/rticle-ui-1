@@ -1,3 +1,4 @@
+const serverUrl = "https://rticle-api.herokuapp.com";
 export const attemptLogin = async (body) => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -8,5 +9,5 @@ export const attemptLogin = async (body) => {
     body: JSON.stringify(body),
   };
 
-  return await fetch("user/login", requestOptions);
+  return await fetch(`${serverUrl}/user/login`, requestOptions);
 };

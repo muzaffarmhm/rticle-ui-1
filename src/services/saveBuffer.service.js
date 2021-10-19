@@ -1,4 +1,5 @@
 import Cookies from "js-cookie";
+const serverUrl = "https://rticle-api.herokuapp.com";
 export const saveArticleToBuffer = async (body) => {
   // console.log("BODY", body);
   var myHeaders = new Headers();
@@ -10,5 +11,5 @@ export const saveArticleToBuffer = async (body) => {
     body: body,
   };
 
-  return await fetch("buffer", requestOptions);
+  return await fetch(`${serverUrl}/buffer`, requestOptions);
 };

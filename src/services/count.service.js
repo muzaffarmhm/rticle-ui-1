@@ -1,3 +1,4 @@
+const serverUrl = "https://rticle-api.herokuapp.com";
 export const getUserCount = async () => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -7,10 +8,7 @@ export const getUserCount = async () => {
     headers: myHeaders,
   };
 
-  const response = await fetch(
-    "https://rticle-api.herokuapp.com/user/getCount",
-    requestOptions
-  );
+  const response = await fetch(`${serverUrl}/user/getCount`, requestOptions);
   const responseJson = await response.json();
   return responseJson.count;
 };
@@ -24,7 +22,7 @@ export const getArticlesCount = async () => {
     headers: myHeaders,
   };
 
-  const response = await fetch("article/getCount", requestOptions);
+  const response = await fetch(`${serverUrl}/article/getCount`, requestOptions);
   const responseJson = await response.json();
   return responseJson.count;
 };
@@ -38,7 +36,7 @@ export const getBufferCount = async () => {
     headers: myHeaders,
   };
 
-  const response = await fetch("buffer/getCount", requestOptions);
+  const response = await fetch(`${serverUrl}/buffer/getCount`, requestOptions);
   const responseJson = await response.json();
   return responseJson.count;
 };

@@ -1,3 +1,4 @@
+const serverUrl = "https://rticle-api.herokuapp.com";
 export const attemptSignUp = async (body) => {
   // console.log("BODY", body);
   var myHeaders = new Headers();
@@ -9,5 +10,5 @@ export const attemptSignUp = async (body) => {
     body: body,
   };
 
-  return await fetch("user/register", requestOptions);
+  return await fetch(`${serverUrl}/user/register`, requestOptions);
 };

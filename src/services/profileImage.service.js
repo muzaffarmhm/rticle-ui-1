@@ -1,3 +1,4 @@
+const serverUrl = "https://rticle-api.herokuapp.com";
 export const getProfileImg = async (bearerToken) => {
   var myHeaders = new Headers();
   myHeaders.append("Authorization", `Bearer ${bearerToken}`);
@@ -10,6 +11,6 @@ export const getProfileImg = async (bearerToken) => {
     cache: "no-cache",
   };
 
-  const response = await fetch("user/profile-img", requestOptions);
+  const response = await fetch(`${serverUrl}/user/profile-img`, requestOptions);
   return await response.text();
 };

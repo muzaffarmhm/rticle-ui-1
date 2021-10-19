@@ -1,3 +1,4 @@
+const serverUrl = "https://rticle-api.herokuapp.com";
 export const approveArticle = async (body, bearerToken) => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -9,7 +10,7 @@ export const approveArticle = async (body, bearerToken) => {
     body: JSON.stringify(body),
   };
 
-  return await fetch("article/approve", requestOptions);
+  return await fetch(`${serverUrl}/article/approve`, requestOptions);
 };
 
 export const getArticle = async (id) => {
@@ -21,7 +22,10 @@ export const getArticle = async (id) => {
     headers: myHeaders,
   };
 
-  const response = await fetch(`../article/read/${id}`, requestOptions);
+  const response = await fetch(
+    `${serverUrl}/../article/read/${id}`,
+    requestOptions
+  );
   return await response.json();
 };
 
@@ -35,7 +39,7 @@ export const getLatestArticles = async (skip) => {
     params: JSON.stringify({ skip: skip }),
   };
 
-  const response = await fetch("article/latest", requestOptions);
+  const response = await fetch(`${serverUrl}/article/latest`, requestOptions);
   const responseJson = await response.json();
   return responseJson.articles;
 };
