@@ -27,7 +27,7 @@ export default function Signup() {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("description", description);
-    formData.append("role", "admin");
+    formData.append("role", "blogger");
     const response = await attemptSignUp(formData);
     const responseJson = await response.json();
 
