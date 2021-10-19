@@ -59,6 +59,5 @@
   },
   "engines": {
     "node": ">=12"
-  },
-  "proxy": "http://rticle-api/herokuapp.com"
+  }
 }
