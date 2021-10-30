@@ -19,7 +19,7 @@ export default function single({
   return (
     <div>
       <Navbar />
-      <div class="mx-auto flex flex-wrap pt-6 px-20 bg-gray-200">
+      <div class="mx-auto flex flex-wrap pt-6 px-20 bg-gray-200  min-w-full">
         <section class=" flex flex-col items-center px-3">
           <article class="flex flex-col shadow my-4">
             <div className="pa-10">

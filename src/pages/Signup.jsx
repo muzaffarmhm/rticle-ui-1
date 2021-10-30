@@ -7,6 +7,8 @@ import FormTop from "../components/FormTop";
 import { attemptSignUp } from "../services/attemptSignUp.service";
 import { useHistory } from "react-router-dom";
 import toast from "react-hot-toast";
+import { ImageCropper } from "./ImageCropper/ImageCropper";
+import _ from "lodash";
 
 export default function Signup() {
   const [firstName, setFirstName] = useState();
@@ -16,12 +18,17 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState();
   const [description, setDescription] = useState();
   const [profileImage, setProfileImage] = useState();
+  const [profileUrl, setProfileUrl] = useState();
+  const [croppedImage, setCroppedImage] = useState();
+
+  const [openCropper, setOpenCropper] = useState(false);
+
   let history = useHistory();
 
   const signUp = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("profileImage", profileImage);
+    formData.append("profileImage", croppedImage || profileImage);
     formData.append("firstName", firstName);
     formData.append("lastName", lastName);
     formData.append("email", email);
@@ -134,16 +141,27 @@ export default function Signup() {
               </div>
 
               <label>Your Selfie over here 😁</label>
+              {openCropper && (
+                <ImageCropper
+                  url={profileUrl}
+                  setImage={setCroppedImage}
+                  setOpenCropper={setOpenCropper}
+                  aspect={1 / 1}
+                />
+              )}
               <InputTemplate
                 type="file"
                 accept="image/*"
                 onChange={(event) => {
                   setProfileImage(event.target.files[0]);
+                  if (event.target.files && event.target.files[0]) {
+                    setProfileUrl(URL.createObjectURL(event.target.files[0]));
+                  }
+                  setOpenCropper(true);
                 }}
               >
                 {" "}
               </InputTemplate>
-
               <FormButton onClick={matchPassword} />
             </form>
             <Link to="/login">
