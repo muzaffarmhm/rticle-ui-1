@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PostTemplateSkin from "../components/PostTemplateSkin";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MUIRichTextEditor from "mui-rte";
+import { getLatestArticles } from "../services/article.service";
+
 export default function single({
   title,
   coverPic,
@@ -16,6 +18,14 @@ export default function single({
   const myTheme = createTheme({
     // Set up your custom MUI theme here
   });
+  const [latestArticles, setLatestArticles] = useState();
+  useEffect(() => {
+    async function getLatest() {
+      setLatestArticles(await getLatestArticles(1));
+    }
+    getLatest();
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -72,27 +82,15 @@ export default function single({
               </div>
             </div>
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-              <PostTemplateSkin
-                category="Food"
-                title="Foods you missed to eat!"
-                text="I don't know about you, but I can't wait until I can enjoy a juicy burger and fries while dining with friends inside an actual restaurant again. And it looks like I'm not alone."
-                views="1.3k"
-                commentsCount="41"
-              />
-              <PostTemplateSkin
-                category="Technology"
-                title="Upcoming latest technologies"
-                text="Technology today is evolving at such a rapid pace, enabling faster change and progress, causing an acceleration of the rate of change, until eventually, it will become exponential. "
-                views="2.3k"
-                commentsCount="110"
-              />
-              <PostTemplateSkin
-                category="Travel"
-                title="Top 5 places to visit this summer!"
-                text="Summer has arrived, so you need to make immediate plans for a perfect summer holiday in India. India spoils visitors with exciting choices for a summer vacation ."
-                views="1.3k"
-                commentsCount="36"
-              />
+              {_.map(latestArticles, (latestArticle) => {
+                <PostTemplateSkin
+                  category={latestArticle.category}
+                  title={latestArticle.title}
+                  text={latestArticle.description}
+                  views={latestArticle.views}
+                  commentsCount="0"
+                />;
+              })}
             </div>
           </div>
         </section>

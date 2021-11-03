@@ -43,3 +43,18 @@ export const getLatestArticles = async (skip) => {
   const responseJson = await response.json();
   return responseJson.articles;
 };
+
+export const getTrendingArticles = async (skip) => {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    params: JSON.stringify({ skip: skip }),
+  };
+
+  const response = await fetch(`${serverUrl}/article/trending`, requestOptions);
+  const responseJson = await response.json();
+  return responseJson.articles;
+};
