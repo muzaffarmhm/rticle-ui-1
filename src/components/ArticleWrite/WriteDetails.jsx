@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Tags from "./Tags";
 import FormButton from "../FormButton";
-import { ImageCropper } from "../../pages/ImageCropper/ImageCropper";
-import _ from "lodash";
 
 export default function WriteDetails(props) {
-  const [openCropper, setOpenCropper] = useState(false);
-  const [coverUrl, setCoverUrl] = useState();
   return (
     <div className="mb-10">
       <form action="" method="post">
@@ -66,24 +62,14 @@ export default function WriteDetails(props) {
             <option value="others">Others</option>
           </select>
         </div>
-        {openCropper && (
-          <ImageCropper
-            url={coverUrl}
-            setImage={props.setCoverPicUrl}
-            setOpenCropper={setOpenCropper}
-            aspect={16 / 5}
-          />
-        )}
+
         <div className="p-4">
           <div className="pb-3">
             <label>Article Cover Photo:</label>
           </div>
           <input
             onChange={(event) => {
-              if (event.target.files && event.target.files[0]) {
-                setCoverUrl(URL.createObjectURL(event.target.files[0]));
-              }
-              setOpenCropper(true);
+              props.setCoverPicUrl(event.target.files[0]);
             }}
             type="file"
             accept="image/*"
