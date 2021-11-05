@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import AboutUsTemplate from "../components/AboutUsTemplate";
+import Footer from "../components/Footer";
+import img1 from "../images/pasha.jpg"
 
 export default function About() {
   return (
@@ -18,28 +20,29 @@ export default function About() {
         </div>
 
         <AboutUsTemplate
-          titlename="HariHaran | Founder"
-          name="Hari"
-          post="Developer"
-          story="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti reprehenderit quisquam possimus ut rem temporibus esse velit blanditiis, deserunt, cum, eum fuga laborum obcaecati."
+          titlename="Hariharan | Founder"
+          name="Hariharan"
+          // post="Developer"
+          story="currently working at Ajira Tech as a Software dev who loves problem solving and backend development specialize in efficient node and django apps."
           image="https://dummyimage.com/600x500/d9ccd9/ffffff"
-          facebook=""
+          facebook="https://www.facebook.com/hari.eagle.9"
           twitter=""
-          linkedin=""
-          github=""
+          linkedin="https://www.linkedin.com/in/hariharan-g-195453152/"
+          github="https://github.com/haridebl3"
         />
         <AboutUsTemplate
           titlename="Muzaffar Pasha | Founder"
           name="Pasha"
-          post="Developer"
-          story="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti reprehenderit quisquam possimus ut rem temporibus esse velit blanditiis, deserunt, cum, eum fuga laborum obcaecati."
-          image="https://dummyimage.com/600x500/d9ccd9/ffffff"
-          facebook=""
-          twitter=""
-          linkedin=""
-          github=""
+          // post="Developer"
+          story="and a technology enthusiast that enjoys learning coding and robotics, as well as writing articles on the subject. I'm a front-end developer who's currently studying nodejs as back-end."
+          image={img1}
+          facebook="https://www.facebook.com/muzaffar.pasha.752"
+          twitter="https://www.instagram.com/muza_4.1.2k/?hl=en"
+          linkedin="https://www.linkedin.com/in/muzaffar-pasha-3209b3137/"
+          github="https://github.com/muzaffarmhm"
         />
       </section>
+      <Footer/>
     </div>
   );
 }

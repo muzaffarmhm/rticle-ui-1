@@ -7,7 +7,7 @@ export default function AboutUsTemplate(props) {
       <div className="lg:w-1/2">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">{props.titlename}</h2>
         <p className="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md">
-          Hi I am {props.name}, {props.post}, {props.story}
+          Hi, I am {props.name} {props.post} {props.story}
         </p>
         <div className="flex items-center mt-6 -mx-2">
           <a className="mx-2" href={props.twitter} aria-label="Twitter">

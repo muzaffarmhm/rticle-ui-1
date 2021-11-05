@@ -28,10 +28,7 @@ export default function Categories() {
               Statistics of our Website
             </h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-              officia a pariatur suscipit nihil similique nostrum eveniet.
-              Excepturi, mollitia minima. Consequatur aperiam eligendi officia
-              nemo minus.
+              Here is our display of statistics of the website. Statistics are log files that measure the behaviour of visitors and track details of the website.
             </p>
           </div>
           <div class="flex flex-wrap -m-4 text-center">

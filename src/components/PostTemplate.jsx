@@ -15,22 +15,18 @@ export default function PostTemplate() {
                 category="Food"
                 title="Foods you missed to eat!"
                 text="I don't know about you, but I can't wait until I can enjoy a juicy burger and fries while dining with friends inside an actual restaurant again. And it looks like I'm not alone."
-                views="1.3k"
-                commentsCount="41"
               />
               <PostTemplateSkin
                 category="Technology"
                 title="Upcoming latest technologies"
                 text="Technology today is evolving at such a rapid pace, enabling faster change and progress, causing an acceleration of the rate of change, until eventually, it will become exponential. "
-                views="2.3k"
-                commentsCount="110"
+
               />
               <PostTemplateSkin
                 category="Travel"
                 title="Top 5 places to visit this summer!"
                 text="Summer has arrived, so you need to make immediate plans for a perfect summer holiday in India. India spoils visitors with exciting choices for a summer vacation ."
-                views="1.3k"
-                commentsCount="36"
+
               />
             </div>
           </div>

@@ -19,6 +19,7 @@ export default function WriteDetails(props) {
             }}
             className="block p-2 w-full border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent "
             placeholder="Enter your Title name here   @Example: How to win a lottery"
+            required
           />
         </div>
 
@@ -34,12 +35,13 @@ export default function WriteDetails(props) {
               props.setDescription(e.target.value);
             }}
             className="block p-2 w-full border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent "
+            required
             placeholder="Enter the description/short-explanation of your article  @Example: How to win a lottery"
           />
         </div>
 
         <div>
-          <Tags tags={props.tags} setTags={props.setTags} />
+          <Tags tags={props.tags} setTags={props.setTags} required />
         </div>
 
         <div className="p-4">
@@ -52,6 +54,7 @@ export default function WriteDetails(props) {
             name="Category"
             id="cars"
             value={props.category}
+            required
             onChange={(e) => {
               props.setCategory(e.target.value);
             }}
@@ -73,6 +76,7 @@ export default function WriteDetails(props) {
             }}
             type="file"
             accept="image/*"
+            required
           ></input>
         </div>
       </form>

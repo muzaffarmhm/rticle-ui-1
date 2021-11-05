@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import _ from "lodash";
 import Cookies from "js-cookie";
 import { useJwt } from "react-jwt";
+import logo from "../../src/images/logo.svg";
 
 export default function Navbar() {
   const [authToken, setAuthToken] = useState();
@@ -28,7 +29,7 @@ export default function Navbar() {
             <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
               <Link
                 to="/"
-                className="mr-5 bg-green-300 p-2 rounded-3xl hover:bg-green-300 p-2 rounded-3xl"
+                className="mr-5 hover:bg-green-300 p-2 rounded-3xl hover:bg-green-300 p-2 rounded-3xl"
               >
                 Home
               </Link>
@@ -55,7 +56,7 @@ export default function Navbar() {
               </Link>
             </nav>
             <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
-              <span className="ml-3 text-xl">rticle</span>
+                <img src={logo} alt="" className="w-20"/>
             </a>
             {!authToken && (
               <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
