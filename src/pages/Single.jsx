@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PostTemplateSkin from "../components/PostTemplateSkin";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MUIRichTextEditor from "mui-rte";
 import { getLatestArticles } from "../services/article.service";
+import _ from "lodash";
 
-export default function single({
+export default function Single({
   title,
   coverPic,
   authorName,
