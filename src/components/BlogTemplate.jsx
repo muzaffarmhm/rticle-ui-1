@@ -5,8 +5,14 @@ export default function BlogTemplate(props) {
   return (
     <div>
       <article className=" flex flex-col shadow my-4  ">
-        <a href="#" className="hover:opacity-75">
-          <img src={props.coverPicUrl} />
+        <a href="#" className="hover:opacity-75  aspect-w-16 aspect-h-9">
+          <img
+            src={props.coverPicUrl}
+            style={{
+              width: "1600px",
+              height: "312px",
+            }}
+          />
         </a>
         <div className=" bg-white flex flex-col justify-start p-6 hover:bg-gray-100">
           <a

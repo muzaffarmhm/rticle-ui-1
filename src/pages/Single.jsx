@@ -34,8 +34,14 @@ export default function Single({
         <section class=" flex flex-col items-center px-3">
           <article class="flex flex-col shadow my-4">
             <div className="pa-10">
-              <a href="#" class="hover:opacity-75">
-                <img src={coverPic} />
+              <a href="#" class="hover:opacity-75  aspect-w-16 aspect-h-9">
+                <img
+                  style={{
+                    width: "1600px",
+                    height: "312px",
+                  }}
+                  src={coverPic}
+                />
               </a>
             </div>
             <div class="bg-white flex flex-col justify-start p-6">
