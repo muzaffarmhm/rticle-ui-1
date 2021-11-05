@@ -1,5 +1,6 @@
 {
   "name": "rticle",
+  "homepage": "http://rticle.info",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
