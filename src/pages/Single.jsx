@@ -68,6 +68,7 @@ export default function Single({
                   readOnly={true}
                   toolBar={false}
                   inlineToolbar={true}
+                  controls={[]}
                 />
               </ThemeProvider>
             </div>
