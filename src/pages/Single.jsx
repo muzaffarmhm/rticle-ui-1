@@ -30,14 +30,13 @@ export default function Single({
   return (
     <div>
       <Navbar />
-      <div class="mx-auto flex flex-wrap pt-6 px-20 bg-gray-200">
-        <section class=" flex flex-col items-center px-3">
-          <article class="flex flex-col shadow my-4">
+      <div class="mx-auto w-full flex flex-wrap pt-6 px-20 bg-gray-200">
+        <section class="container w-full md:max-w-3xl mx-auto pt-20">
+          <article class="flex flex-col shadow my-4 container w-full md:max-w-3xl mx-auto pt-10">
             <div className="pa-10">
               <a href="#" class="hover:opacity-75  aspect-w-16 aspect-h-9">
-                <img
+                <img className="w-full"
                   style={{
-                    width: "1600px",
                     height: "312px",
                   }}
                   src={coverPic}

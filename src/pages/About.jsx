@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import AboutUsTemplate from "../components/AboutUsTemplate";
 import Footer from "../components/Footer";
-import img1 from "../images/pasha.jpg"
+import img1 from "../images/muza.jpg"
+import img2 from "../images/hari.jpg"
 
 export default function About() {
   return (
@@ -24,7 +25,7 @@ export default function About() {
           name="Hariharan"
           // post="Developer"
           story="currently working at Ajira Tech as a Software dev who loves problem solving and backend development specialize in efficient node and django apps."
-          image="https://dummyimage.com/600x500/d9ccd9/ffffff"
+          image={img2}
           facebook="https://www.facebook.com/hari.eagle.9"
           twitter=""
           linkedin="https://www.linkedin.com/in/hariharan-g-195453152/"
