@@ -26,7 +26,7 @@ export default function Navbar() {
       <Link to="/">
         <header className="text-gray-600 body-font">
           <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+            <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
               <Link
                 to="/"
                 className="mr-5 hover:bg-green-300 p-2 rounded-3xl hover:bg-green-300 p-2 rounded-3xl"
@@ -56,8 +56,9 @@ export default function Navbar() {
               </Link>
             </nav>
             <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
-                <img src={logo} alt="" className="w-20"/>
+                <img src={logo} alt="" className="w-20 lg:ml-28"/>
             </a>
+  
             {!authToken && (
               <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
                 <Link to="/signup">
