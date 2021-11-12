@@ -12,6 +12,7 @@ import PublicUser from "./pages/PublicUser";
 import PrivateUser from "./pages/PrivateUser";
 import Admin from "./pages/Admin/Admin";
 import ViewArticle from "./pages/ViewArticle";
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/privateprofile" component={PrivateUser} />
         <Route path="/admin" component={Admin} />
         <Route path="/read/:id" component={ViewArticle} />
+        <Route path="/error" component={Error} />
 
         <Toaster />
       </div>
