@@ -30,8 +30,8 @@ export default function Single({
   return (
     <div>
       <Navbar />
-      <div class="mx-auto w-full flex flex-wrap pt-6 px-20 bg-gray-200">
-        <section class="container w-full md:max-w-3xl mx-auto pt-20">
+      <div class="mx-auto w-full flex flex-wrap pt-6 bg-gray-200">
+        <section class="container w-full md:max-w-3xl mx-auto">
           <article class="flex flex-col shadow my-4 container w-full md:max-w-3xl mx-auto pt-10">
             <div className="pa-10">
               <a href="#" class="hover:opacity-75  aspect-w-16 aspect-h-9">
